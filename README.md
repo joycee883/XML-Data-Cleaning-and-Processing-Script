@@ -4,12 +4,15 @@ Transform your messy XML files into clean, structured, and readable text with th
 ### ✨ Features That Make It Shine
 🔍 Parse with Precision <br>
 - Extract XML content directly from files with the robust xml.etree.ElementTree parser.<br>
+
 🧹 Clean Like a Pro<br>
 - Strip unwanted HTML tags effortlessly using BeautifulSoup.<br>
 - Remove noise like text within square brackets [example] and redundant spaces.<br>
 - Output clean, concise, and human-readable text for any application.<br>
+
 💾 Save the Essentials<br>
 - Automatically saves the cleaned content to a UTF-8 encoded text file, ready to use in your projects.<br>
+
 ⚡ Fast and Efficient<br>
 - Optimized for speed and scalability, making it suitable for handling large XML files.<br>
 

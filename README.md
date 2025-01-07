@@ -56,7 +56,9 @@ def denoise_text(text):
     text = re.sub(r'\s+', ' ', text)
     return text
 
-cleaned_text = denoise_text(ET.tostring(root, encoding='utf8').decode('utf8'))```
+cleaned_text = denoise_text(ET.tostring(root, encoding='utf8').decode('utf8'))
+```
+
 ### 📌 Why This Script Stands Out<br>
 - 🌟 Automation-First: Automate the cleaning process without manual intervention.<br>
 - ⚙️ Flexible: Adaptable to various XML formats and sizes.<br>

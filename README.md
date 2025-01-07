@@ -2,20 +2,17 @@
 Transform your messy XML files into clean, structured, and readable text with this powerful and user-friendly Python script. Whether you’re prepping data for analytics, machine learning, or just need a cleaner view of XML content, this tool has got you covered!
 
 ### ✨ Features That Make It Shine
-🔍 Parse with Precision <br>
-- Extract XML content directly from files with the robust xml.etree.ElementTree parser.<br>
-
-🧹 Clean Like a Pro<br>
-- Strip unwanted HTML tags effortlessly using BeautifulSoup.<br>
-- Remove noise like text within square brackets [example] and redundant spaces.<br>
-- Output clean, concise, and human-readable text for any application.<br>
-
-💾 Save the Essentials<br>
-- Automatically saves the cleaned content to a UTF-8 encoded text file, ready to use in your projects.<br>
-
-⚡ Fast and Efficient<br>
-- Optimized for speed and scalability, making it suitable for handling large XML files.<br>
-
+- 🔍 Parse with Precision <br>
+  - Extract XML content directly from files with the robust xml.etree.ElementTree parser.<br>
+- 🧹 Clean Like a Pro<br>
+  - Strip unwanted HTML tags effortlessly using BeautifulSoup.<br>
+  - Remove noise like text within square brackets [example] and redundant spaces.<br>
+  - Output clean, concise, and human-readable text for any application.<br>
+- 💾 Save the Essentials<br>
+  - Automatically saves the cleaned content to a UTF-8 encoded text file, ready to use in your projects.<br>
+- ⚡ Fast and Efficient<br>
+  - Optimized for speed and scalability, making it suitable for handling large XML files.<br>
+  
 ### 🎯 Why Use This Script?<br>
 🔑 Key Use Cases<br>
 - 📊 Data Preprocessing: Prepare raw XML files for data science, analytics, or visualization.<br>
@@ -42,19 +39,24 @@ Transform your messy XML files into clean, structured, and readable text with th
 🧠 Regular Expressions (re): For advanced text cleaning.<br>
 
 ### 🚀 A Peek at the Code’s Workflow<br>
-python
-Copy code
-# Parse the XML File  
-tree = ET.parse(xml_file_path)  
-root = tree.getroot()  
+### ✨ Code Sample
+```python
+import xml.etree.ElementTree as ET
+import re
+from bs4 import BeautifulSoup
 
-# Convert to String and Clean the Data  
-xml_string = ET.tostring(root, encoding='utf8').decode('utf8')  
-cleaned_text = denoise_text(xml_string)  
+# Parse the XML file
+tree = ET.parse(xml_file_path)
+root = tree.getroot()
 
-# Save Cleaned Content  <br>
-with open(output_path, "w", encoding="utf-8") as f:  
-    f.write(cleaned_text)  
+# Clean the data
+def denoise_text(text):
+    text = BeautifulSoup(text, "xml").get_text()
+    text = re.sub(r'\[[^]]*\]', '', text)
+    text = re.sub(r'\s+', ' ', text)
+    return text
+
+cleaned_text = denoise_text(ET.tostring(root, encoding='utf8').decode('utf8')) ``` 
     
 ### 📌 Why This Script Stands Out<br>
 - 🌟 Automation-First: Automate the cleaning process without manual intervention.<br>
